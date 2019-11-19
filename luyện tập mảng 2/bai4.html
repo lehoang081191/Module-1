@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let cnt = 0;
+        let arr = 'abc456qwerty';
+        const isAlpha = /^[a-zA-Z]+$/;
+        for (let j = 0; j < arr.length; j++) {
+            if (isAlpha.test(arr[j])) {
+                cnt += 1
+            }
+        }
+        document.write(cnt);
+    </script>
+</body>
+
+</html>

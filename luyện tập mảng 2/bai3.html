@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = [];
+        let lengthArr = prompt('input lenght of Array : ');
+        let cnt = 0;
+        for (let i = 0; i < lengthArr; i++) {
+            a[i] = prompt('enter value of element ' + i);
+        }
+        console.log(a);
+        for (let j = 0; j < lengthArr; j++) {
+            if (Number.isInteger(parseInt(a[j]))) {
+                cnt += 1;
+            }
+        }
+        document.write('Number of digits in array is: ' + cnt);
+    </script>
+</body>
+
+</html>

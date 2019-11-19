@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1><b>Chỉ số cân nặng cơ thể</b></h1><br>
+    weight:<br><input type="text" id="weight"><br>
+    height:<br><input type="text" id="height"><br>
+    <button type="button" onclick="checkBMI()">Check</button> -->
+    <table>
+        <tr>
+            <td>weight</td>
+            <td>height</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="weight()" id="weight"></td>
+            <td><input type="text" name="height()" id="height"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="check()">check</button></td>
+        </tr>
+    </table>
+    <p id='result'></p>
+</body>
+<script>
+    function check() {
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var BMI = weight / height ** 2;
+        if (BMI < 18) {
+            document.getElementById('result').innerHTML = ("Underweight");
+        } else if (BMI < 25.0) {
+            document.getElementById('result').innerHTML = ("Nomal");
+        } else if (BMI < 30.0) {
+            document.getElementById('result').innerHTML = ("Overweight");
+        } else {
+            document.getElementById('result').innerHTML = ("Obese");
+        }
+    }
+</script>
+
+</html>

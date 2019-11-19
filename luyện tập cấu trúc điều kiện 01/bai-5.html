@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var đkt = parseFloat(prompt('Nhập vào điểm kiểm tra: '));
+        var đtgk = parseFloat(prompt('Nhập vào điểm thi giữa kỳ: '));
+        var đtck = parseFloat(prompt('Nhập vào điểm thi cuối kỳ: '));
+        var đtb = (đkt + đtgk + đtck) / 3;
+        if ((đkt < 0) || (đkt > 10) || (đtgk < 0) || (đtgk > 10) || (đtck < 0) || (đtck > 10)) {
+            alert('nhập điểm sai');
+        } else if (đtb >= 8) {
+            document.write('Đạt loại giỏi');
+        } else if (đtb >= 6) {
+            document.write('Đạt loại khá');
+        } else if (đtb >= 4) {
+            document.write('Đạt loại TB');
+        } else {
+            document.write('Đạt loại yếu');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+        <script>
+            let number = parseInt(prompt("Nhập số điện sử dụng (kw)"));
+            let monney;
+            if (number <= 50) {
+                monney = 10000 + number * 480;
+            } else if (number <= 100) {
+                monney = 10000 + number * 700;
+            }
+            else {
+                monney = 10000 + number * 900;
+            }
+            alert("Số tiền điện: " + monney);
+        
+    </script>
+</body>
+
+</html>

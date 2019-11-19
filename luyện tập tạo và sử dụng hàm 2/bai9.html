@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function check(arr, num) {
+            let count = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == num) {
+                    count += 1;
+                }
+            }
+            if (count) {
+                return count;
+            } else {
+                return -1;
+            }
+        }
+        let n = Math.floor(Math.random() * 99 + 1);
+        let arr = new Array(n);
+        for (var i = 0; i < n; i++) {
+            arr[i] = Math.floor(Math.random() * 99 + 1);
+        }
+        document.write(arr + '<br>');
+        let num = Math.floor(Math.random() * 99 + 1);
+        document.write(num+ '<br>');
+        document.write(check(arr, num));
+    </script>
+</body>
+
+</html>

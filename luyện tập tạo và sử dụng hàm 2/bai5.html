@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = +prompt('nhập num 1');
+        let num2 = +prompt('nhập num 2');
+        let num3 = +prompt('nhập num 3');
+        function minNum(num1, num2, num3) {
+            let min = num1;
+            if (num2 < min) {
+                min = num2;
+            } else if (num3 < min) {
+                min = num3;
+            }
+            return min;
+        }
+        document.write('Số nhỏ nhất là: ' + minNum(num1, num2, num3));
+
+
+    </script>
+</body>
+
+</html>

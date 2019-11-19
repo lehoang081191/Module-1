@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="400" style="border: 1px solid #eb0a0a;"></canvas><br>
+    <script>
+        let Rectangle = function (width, height) {
+            this.width = width;
+            this.height = height;
+
+            this.getWidth = function () {
+                return width;
+            }
+            this.getHeight = function () {
+                return height;
+            }
+            this.getAcreage = function () {
+                return width * height;
+            }
+            this.getPerimeter = function () {
+                return 2 * (width + height);
+            }
+        }
+
+        let widths = Math.floor(Math.random() *500);
+        let heights = Math.floor(Math.random() * 400);
+        let hcn = new Rectangle(widths, heights)
+        let acreage = hcn.getAcreage();
+        let perimeter = hcn.getPerimeter();
+
+        let c = document.getElementById('myCanvas');
+        let ctx = c.getContext('2d');
+        ctx.fillStyle = "#EC07C5";
+        ctx.fillRect(50, 50, widths, heights);
+        document.write('width is : ' + widths + ' height : ' + heights + '<br>');
+        document.write('acreage is : ' + acreage + ' perimeter is : ' + perimeter);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function inputN() {
+            let num = +prompt('Nhập num:');
+            return num;
+        }
+        function factorial(num) {
+            let adjective = 1;
+            for (var i = num; i >= 1; i--) {
+                adjective *= i;
+            }
+            return adjective;
+        }
+        function main() {
+            let a = inputN();
+            let b = factorial(a);
+            document.write('Giai thừa của số nhập vào là :' + b);
+        }
+        main();
+    </script>
+</body>
+
+</html>

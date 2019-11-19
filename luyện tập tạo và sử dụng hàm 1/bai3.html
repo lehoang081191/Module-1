@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function input(num1, num2) {
+            if (num1 > num2) {
+                alert(num1 + ' lớn hơn ' + num2);
+                return num1, num2
+            } else {
+                return num1 + num2
+            }
+        }
+        function main() {
+            let num1 = Math.floor(Math.random() * 99 + 1);
+            let num2 = Math.floor(Math.random() * 99 + 1);
+            let n = input(num1, num2);
+            document.write(num1 + '<br>');
+            document.write(num2 + '<br>');
+            document.write('Tổng của 2 số là: ' + n);
+        }
+        main();
+    </script>
+</body>
+
+</html>

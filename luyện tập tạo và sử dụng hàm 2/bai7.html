@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function swap(num1, num2) {
+            num1 = num1 - num2;
+			num2 = num1 + num2;
+			num1 = num2 - num1;
+            return [num1, num2];
+        }
+        let num1 = +prompt('Nhập num1');
+        let num2 = +prompt('Nhập num2');
+        document.write(num1+'<br>');
+        document.write(num2+'<br>');
+        document.write(swap(num1, num2));
+    </script>
+</body>
+
+</html>

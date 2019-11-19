@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = parseFloat(prompt('nhập a'));
+        let b = parseFloat(prompt('nhập b'));
+        let c = parseFloat(prompt('nhập c'));
+        let d = b ** 2 - 4 * a * c;
+        let x = - b / 2 * a;
+        let x1 = (-b + Math.sqrt(d)) / 2 * a;
+        let x2 = (-b - Math.sqrt(d)) / 2 * a;
+        if (d < 0) {
+            document.write('Phương trình vô nghiệm');
+        } else if (d == 0) {
+            document.write('Phương trình có nghiệm kép: ' + x);
+        } else {
+            document.write('Phương trình có 2 nghiệm:' + x1 + 'và ' + x2);
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var doanhthu = parseInt(prompt('Nhập doanh thu tháng này: '));
+        if (doanhthu < 0) {
+            alert('Nhập sai!');
+        } else if (doanhthu <= 10) {
+            var muc1 = doanhthu * (1 / 100);
+            document.write('hoa hồng tháng này của bạn là:' + muc1);
+        } else if (doanhthu <= 20) {
+            var muc2 = doanhthu * (2 / 100);
+            document.write('hoa hồng tháng này của bạn là:' + muc2);
+        } else if (doanhthu <= 30) {
+            var muc3 = doanhthu * (3 / 100);
+            document.write('hoa hồng tháng này của bạn là:' + muc3);
+        } else {
+            var muc4 = doanhthu * (4 / 100);
+            document.write('hoa hồng tháng này của bạn là:' + muc4);
+        }
+    </script>
+</body>
+
+</html>

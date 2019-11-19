@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập a: <input type="text" name="dai" id="a"><br><br>
+    Nhập b: <input type="text" name="rong" id="b"><br><br>
+    <button type="button" onclick="check()">Kết quả</button><br>
+    <p id="result"></p>
+    <script>
+        function check() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            var S = a * b;
+            document.getElementById('result').innerHTML = ('Diện tích HCN là: ' + S + ' cm2');
+        }
+    </script>
+</body>
+
+</html>

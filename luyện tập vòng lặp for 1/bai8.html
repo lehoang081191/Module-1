@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="show()" id='play'>Chơi</button>
+    <script>
+        function show() {
+            let a = +prompt('Đoán số từ 0 đến khoảng : ');
+            let b = Math.floor(Math.random() * a + 1);
+            for (let i = 1; i < 4; i++) {
+                let c = +prompt('Số bạn đoán là :');
+                if (b === c) {
+                    alert('Chính xác!');
+                    break;
+                }
+                if (c < b) {
+                    alert('nhỏ hơn so với đáp án!');
+                    continue;
+                }
+                if (c > b) {
+                    alert('lớn hơn so với đáp án!');
+                }
+                alert('Hãy đoán lại!')
+            }
+            alert('Đáp án là :' + b);
+        }
+    </script>
+</body>
+
+</html>

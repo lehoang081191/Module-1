@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const pi = 3.14;
+        function inpitN() {
+            let r = +prompt('Nhập bán kính hình tròn :');
+            return r;
+        }
+        function acreage(r) {
+            return r ** 2 * pi;
+        }
+        function perimeter(r) {
+            return 2 * pi * r;
+        }
+        function main() {
+            let a = inpitN();
+            let b = acreage(a);
+            let c = perimeter(a);
+            document.write('Diện tích hình tròn: ' + b + '<br>');
+            document.write('Chu vi hình tròn là: ' + c);
+        }
+        main()
+    </script>
+</body>
+
+</html>
