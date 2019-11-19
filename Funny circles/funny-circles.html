@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        function Circle(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        //vẽ hình tròn
+        function createCircle() {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let radius = Math.floor(Math.random() * 80);
+            let color = getRandomColor();
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            let circle = new Circle(x, y, radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        //lấy giá trị random chỉ số
+        function getRandom() {
+            return Math.floor(Math.random() * 256);
+        }
+        function getRandomColor() {
+            let red = getRandom();
+            let green = getRandom();
+            let blue = getRandom();
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+        function createMultipleCircle() {
+            for (var i = 0; i < 30; i++) {
+                createCircle();
+            }
+        }
+        createMultipleCircle();
+    </script>
+</body>
+
+</html>
