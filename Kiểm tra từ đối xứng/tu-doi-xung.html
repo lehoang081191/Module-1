@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(word){
+            if (word.length == 0){
+                return false;
+            }
+            if (word[0] !== word[word.length -1]){
+                return false;
+            }
+            
+            for (let i= 1 ; i< word.length/2; i++){
+                if(word[i] !== word[word.length -1 - i]){
+                    return false;
+                }
+                
+            } 
+            return true;
+        }
+        function main(){
+            let aWord = prompt('enter a word :');
+            if (isPalindrome(aWord)===true){
+                document.write(aWord +' is a palindrome!')
+            }
+            if (isPalindrome(aWord) === false){
+                document.write(aWord + ' is not a palindrome!')
+            }
+        }
+        main()
+    </script>
+</body>
+</html>
