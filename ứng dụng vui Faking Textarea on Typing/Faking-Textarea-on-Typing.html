@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <form name="myForm">
+            <textarea name="myTxt" onkeydown="crazyTextarena();" cols="40" rows="10"></textarea>
+        </form>
+    </body>
+    <script>
+        let a = [],
+            n = "";
+
+        a[0] = "X"; a[1] = "i"; a[2] = "n"; a[3] = " "; a[4] = "c"; a[5] = "h";
+        a[6] = "à"; a[7] = "o"; a[8] = "!"; a[9] = " "; a[10] = "M";
+        a[11] = "ì"; a[12] = "n"; a[13] = "h";
+        a[14] = " "; a[15] = "L";
+        a[16] = "à"; a[17] = " "; a[18] = "H"; a[19] = "o"; a[20] = "à"; a[21] = "n";
+        a[22] = "g"; a[23] = ".";
+
+        function crazyTextarena() {
+            let text = document.myForm.myTxt.value;
+            count = text.length;
+            if (count > 0) {
+                for (i = 0; i < count; i++) {
+                    n += a[i];
+                    if (i == 24) {
+                        console.log(text);
+                        document.myForm.myTxt.value = "";
+                        n = "";
+                    }
+                }
+            }
+            console.log(n);
+            document.myForm.myTxt.value = n;
+            n = "";
+            setTimeout("crazyTextarena()", 1);
+        }
+    </script>
+</body>
+
+</html>
