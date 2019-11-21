@@ -9,38 +9,56 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="500" height="400" style="border: 1px solid #eb0a0a;"></canvas><br>
+    <canvas id="myCanvas" width="500" height="400" style="border: 2px solid #eb0a0a;"></canvas>
     <script>
         let Rectangle = function (width, height) {
             this.width = width;
             this.height = height;
 
             this.getWidth = function () {
-                return width;
+                return this.width;
             }
             this.getHeight = function () {
-                return height;
+                return this.height;
             }
             this.getAcreage = function () {
-                return width * height;
+                return this.width * this.height;
             }
             this.getPerimeter = function () {
-                return 2 * (width + height);
+                return 2 * (this.width + this.height);
             }
         }
 
-        let widths = Math.floor(Math.random() *500);
-        let heights = Math.floor(Math.random() * 400);
+        let widths = Math.floor(Math.random() * 300);
+        let heights = Math.floor(Math.random() * 200);
         let hcn = new Rectangle(widths, heights)
         let acreage = hcn.getAcreage();
         let perimeter = hcn.getPerimeter();
 
-        let c = document.getElementById('myCanvas');
-        let ctx = c.getContext('2d');
-        ctx.fillStyle = "#EC07C5";
-        ctx.fillRect(50, 50, widths, heights);
-        document.write('width is : ' + widths + ' height : ' + heights + '<br>');
-        document.write('acreage is : ' + acreage + ' perimeter is : ' + perimeter);
+        function createCircle() {
+            let x = Math.floor(Math.random() * 300);
+            let y = Math.floor(Math.random() * 200);
+            let color1 = getRandomColor();
+            let color2 = getRandomColor();
+            let c = document.getElementById('myCanvas');
+            let ctx = c.getContext('2d');
+            ctx.fillStyle = color1;
+            ctx.fillRect(x, y, widths, heights);
+            ctx.fillStyle = color2;
+            ctx.font = "20px Arial";
+            ctx.fillText('acreage is : ' + acreage + ' perimeter is : ' + perimeter, 10, 20);
+        }
+        function getRandom() {
+            return Math.floor(Math.random() * 256);
+        }
+        function getRandomColor() {
+            let red = getRandom();
+            let green = getRandom();
+            let blue = getRandom();
+            return `rgb(${red},${green},${blue}`;
+        }
+        createCircle();
+
     </script>
 </body>
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <body>
+        <h1 style="position:absolute; top:50px; left:30px;">Do you love me</h1>
+        <input id="yes" type="button" value="yes" onclick="clickYes()" style="position:absolute; left:30px; top:120px;"/>
+        <input id="no" type="button" value="no" onmouseover="hoverNo()" style="position:absolute; left:120px; top:120px;"/>
+        <script>
+          function clickYes() {
+            alert("Xin chúc mừng bạn! Bạn đã đúng");
+          }
+          function hoverNo() {
+            var x = Math.round(Math.random() * window.innerWidth);
+            var y = Math.round(Math.random() * window.innerHeight);
+            document.getElementById("no").style.left = x + "px";
+            document.getElementById("no").style.top = y + "px";
+          }
+        </script>
+</body>
+
+</html>

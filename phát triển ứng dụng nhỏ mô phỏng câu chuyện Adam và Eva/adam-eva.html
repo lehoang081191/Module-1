@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <h2 id="per1">Adam</h2>
+    <button onclick="eatApple1()">Adam Eat Apple</button>
+    <h2 id="per2">Eva</h2>
+    <button onclick="eatApple2()">Eva Eat Apple</button>
+    <h2 id="app">Apple</h2>
+    <style>
+       body {
+            text-align : center;
+       }
+    </style>
+    </head>
+​
+
+<body>
+    <script>
+        function Apple(weight) {
+            this.weight = weight;
+            this.getWeight = function () {
+                return this.weight;
+            }
+            this.decreaseApple = function () {
+                if (this.weight > 0) {
+                    this.weight--;
+                }
+            }
+            this.isEmty = function () {
+                if (this.weight == 0) {
+                    alert("Đã hết táo!")
+                }
+
+            }
+        }
+        function Human(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.getName = function () {
+                return this.name;
+            }
+            this.getWeights = function () {
+                return this.weight;
+            }
+            this.getGender = function () {
+                return this.gender
+            }
+            this.speak = function () {
+                alert("Tôi đói !!!")
+            }
+            this.eatFoods = function (apple) {
+                if (apple.weight > 0) {
+                    this.weight++
+                    apple.decreaseApple();
+                } else {
+                    apple.isEmty();
+                }
+            }
+        }
+        let apple = new Apple(10);
+        let human1 = new Human("Adam", "Male", 60);
+        let human2 = new Human("Eva", "Female", 40);
+        person1 = document.getElementById("per1");
+        person2 = document.getElementById("per2");
+        app = document.getElementById("app");
+        app.innerHTML = apple.getWeight();
+        person1.innerHTML = human1.getName() + " " + human1.getGender() + " " + human1.getWeights();
+        person2.innerHTML = human2.getName() + " " + human2.getGender() + " " + human2.getWeights();
+        function eatApple1() {
+            human1.eatFoods(apple);
+            app.innerHTML = apple.getWeight();
+            person1.innerHTML = human1.getName() + " " + human1.getGender() + " " + human1.getWeights();
+            person2.innerHTML = human2.getName() + " " + human2.getGender() + " " + human2.getWeights();
+        }
+        function eatApple2() {
+            human2.eatFoods(apple);
+            app.innerHTML = apple.getWeight();
+            person1.innerHTML = human1.getName() + " " + human1.getGender() + " " + human1.getWeights();
+            person2.innerHTML = human2.getName() + " " + human2.getGender() + " " + human2.getWeights();
+        }
+
+
+
+    </script>
+</body>
+​
+
+</html>

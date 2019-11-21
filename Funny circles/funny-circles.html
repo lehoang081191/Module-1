@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <canvas id="myCanvas" width="700px" height="500px" style="border:5px solid #d3d3d3;"></canvas>
     <script>
         function Circle(x, y, radius) {
             this.x = x;
@@ -37,10 +37,10 @@
             let red = getRandom();
             let green = getRandom();
             let blue = getRandom();
-            return "rgb(" + red + "," + green + "," + blue + ")";
+            return `rgb(${red},${green},${blue}`;
         }
         function createMultipleCircle() {
-            for (var i = 0; i < 30; i++) {
+            for (var i = 0; i < 1000; i++) {
                 createCircle();
             }
         }
