@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mouse {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.say = " Chít chít. Lêu lêu mèo điên <br>";
+                this.status = true;
+            };
+            getWeight() {
+                return this.weight
+            }
+            checkWeight() {
+                if (this.status)
+                    return document.write(this.name + this.weight + "<br>");
+                else return document.write(this.name + this.weight + " đã chết <br>")
+            }
+            getSpeed() {
+                if (this.weight > 0)
+                    return this.speed
+            }
+            alive = function () {
+                this.status = true;
+                return document.write(this.name + this.say + "<br>");
+            }
+            checkDie() {
+                this.status = false;
+                this.weight = 0;
+            }
+            checkAlive() {
+                if (this.status)
+                    document.write(this.name + " Chít chít. Lêu lêu mèo khùng <br>");
+                else
+                    document.write(this.name + " Chết cha <br>");
+            }
+        }
+        class Cat {
+            constructor(name, weight, speed) {
+                this.name = name;
+                this.weight = weight;
+                this.speed = speed;
+                this.say = " Mày chờ đó chuột <br>";
+                this.status = true;
+            }
+            getWeight() {
+                return document.write(this.name + this.weight + "<br>");
+            }
+            setMouse(mouse) {
+                this.mouse = mouse;
+            }
+            getSpeed() {
+                return this.speed;
+            }
+            catchMouse() {
+                if (this.speed > this.mouse.speed)
+                    return document.write(this.name + " bắt được " + this.mouse.name + "<br>");
+                else
+                    return document.write(this.name + " không bắt được " + this.mouse.name + "<br>");
+            }
+            eat() {
+                if (this.speed > this.mouse.getSpeed() && this.mouse.status && this.status) {
+                    this.weight = this.weight + this.mouse.getWeight();
+                    this.mouse.checkDie();
+                }
+            }
+            alive() {
+                this.status = true;
+                return this.name + this.say;
+            };
+        }
+        let tom = new Cat('Tom', 15, 40);
+        let jerry = new Mouse('Jerry', 3, 35);
+        tom.setMouse(jerry);
+        tom.getWeight();
+        jerry.checkAlive();
+        jerry.checkWeight();
+        jerry.alive();
+        tom.catchMouse();
+        tom.eat();
+        tom.getWeight();
+        jerry.checkAlive();
+        jerry.checkWeight();
+    </script>
+</body>
+
+</html>

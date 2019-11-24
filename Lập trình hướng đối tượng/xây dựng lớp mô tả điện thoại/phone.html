@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Nokia</h2>
+    <div name="Nokia">
+        <input id="input1">
+        <br><br>
+        <button name="nokia" onclick="clickisOnOff(this.name);">bật tắt</button>
+        <button name="nokia" onclick="clickcheck(this.name);">kiểm tra pin</button>
+        <button name="nokia" onclick="clickcharge(this.name);">sạc pin</button>
+        <button name="nokia" onclick="clicksendMess(this.name);">gửi tin nhắn</button>
+    </div>
+    <h2>Iphone</h2>
+
+    <div name="Iphone">
+        <input id="input2">
+        <br><br>
+        <button name="iphone" onclick="clickisOnOff(this.name);">bật tắt</button>
+        <button name="iphone" onclick="clickcheck(this.name);">kiểm tra pin</button>
+        <button name="iphone" onclick="clickcharge(this.name);">sạc pin</button>
+        <button name="iphone" onclick="clicksendMess(this.name);">gửi tin nhắn</button>
+    </div>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        class Mobile {
+            constructor(screen) {
+                this.energy = 20;
+                this.on = false;
+                this.messRiceive = [];
+                this.screen = screen;
+            };
+            check() {
+                this.screen.value = this.energy;
+            }
+            isOnOff() {
+                if (this.on === false) {
+                    this.on = true;
+                } else {
+                    this.on = false;
+                }
+            }
+
+            charge() {
+                if (this.energy < 91) {
+                    this.energy += 10;
+                } else {
+                    this.energy = 100;
+                }
+                alert("pin " + this.energy);
+            }
+            sendMess(phone) {
+                phone.riceiveMess(this.screen.value);
+            }
+            riceiveMess(text) {
+                this.messRiceive.push(text);
+                this.screen.value = text;
+            }
+        }
+        var iphone = new Mobile(document.getElementById("input2"));
+        var nokia = new Mobile(document.getElementById("input1"));
+        function clickcheck(name) {
+            switch (name) {
+                case "nokia":
+                    nokia.check();
+                    break;
+                case "iphone":
+                    iphone.check();
+                    break;
+            }
+        }
+        function clickisOnOff(name) {
+            switch (name) {
+                case "nokia":
+                    nokia.isOnOff();
+                    break;
+                case "iphone":
+                    iphone.isOnOff();
+                    break;
+            }
+        }
+        function clickcharge(name) {
+            switch (name) {
+                case "nokia":
+                    nokia.charge();
+                    break;
+                case "iphone":
+                    iphone.charge();
+                    break;
+            }
+        }
+        function clicksendMess(name) {
+            switch (name) {
+                case "nokia":
+                    nokia.sendMess(iphone);
+                    break;
+                case "iphone":
+                    iphone.sendMess(nokia);
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="lamp" src="demo/pic_bulboff.gif" style="width:100px"><br><br>
+    <button onclick='switchLamp();'>Lamp</button>
+    <button onclick='turnSwichOnOff();'>Switch</button>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <script>
+        class ElictricLamp {
+            constructor(name) {
+                this.name = name
+                this.status = false;
+            };
+            tunrOn() {
+                this.status = true;
+            }
+            tunrOff() {
+                this.status = false;
+            }
+        }
+        class SwitchButton {
+            constructor() {
+                this.lamp = ElictricLamp;
+                this.status = false;
+            };
+            connectToLamp(ElictricLamp) {
+                if (ElictricLamp.status == true) {
+                    alert(`${ElictricLamp.name} On`)
+                } else {
+                    alert(`${ElictricLamp.name} Off`)
+                }
+            }
+            switchOn() {
+                this.status = true;
+            }
+            switchOff() {
+                this.status = false;
+            }
+        }
+        let turnPower = new SwitchButton();
+        let lamp = new ElictricLamp('Lamp');
+
+        function turnSwichOnOff() {
+
+            if (turnPower.status == false) {
+                turnPower.switchOn();
+                turnPower.connectToLamp(lamp)
+
+            } else {
+                turnPower.switchOff();
+                document.getElementById('lamp').src = 'demo/pic_bulboff.gif';
+            }
+
+            if (turnPower.status == true) {
+                if (lamp.status == true) {
+                    document.getElementById('lamp').src = 'demo/pic_bulbon.gif';
+                }
+            }
+        }
+
+        function switchLamp() {
+            if (turnPower.status == true) {
+                if (lamp.status == false) {
+                    lamp.tunrOn()
+                    document.getElementById('lamp').src = 'demo/pic_bulbon.gif'
+                }
+                else {
+                    lamp.tunrOff()
+                    document.getElementById('lamp').src = 'demo/pic_bulboff.gif';
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
