@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Add New Product (Thêm sản phẩm mới)</h3>
+    <div>
+        <input type="text" id="add">
+        <button id="add" onclick="addNewproduct();">Add</button>
+    </div>
+    <div id="table">
+        <table id="showProduct">
+
+        </table>
+    </div>
+    <script>
+        let listOfProduct = ['Lamborghini', 'Ferrari', 'Audi', 'BMW', 'Porsche', 'Rolls Royce'];
+
+        function showProduct() {
+            let list = '';
+            for (let i = 0; i < listOfProduct.length; i++) {
+                list += '<tr><td>' + (i + 1) + '.' + '<td>' + listOfProduct[i] + '</td>' + '<td><button id="edit" onclick="editProduct(' + i + ')">Edit</button></td>'
+                    + '<td><button id="del" onclick="deleteProduct(' + i + ')">Delete</button></td> </tr>';
+            }
+            document.getElementById('showProduct').innerHTML = list;
+        }
+
+        function addNewproduct() {
+            let newProduct = document.getElementById('add').value;
+            listOfProduct.push(newProduct);
+            showProduct();
+        }
+
+        function editProduct(i) {
+            let edit = prompt('Enter the value');
+            if (edit !== '')
+                listOfProduct[i] = edit;
+            showProduct();
+        }
+
+        function deleteProduct(i) {
+            listOfProduct.splice(i, 1);
+            showProduct();
+        }
+        showProduct();
+    </script>
+</body>
+
+</html>
