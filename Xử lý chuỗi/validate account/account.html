@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let regexp = '';
+        const checkAccount = (str) => {
+            regexp = /^[_a-z0-9]{6,}$/;
+            if (regexp.test(str)) {
+                document.write(str + " : Tên tài khoản hợp lệ " + "<br>");
+            } else {
+                document.write(str + " : Tên tài khoản không hợp lệ " + "<br>");
+            }
+        }
+        checkAccount("123abc_");
+        checkAccount("_abc123");
+        checkAccount("______");
+        checkAccount("123456");
+        checkAccount("abcdefg");
+        checkAccount(".@");
+        checkAccount("12345");
+        checkAccount("1234_");
+        checkAccount("abcde");
+    </script>
+</body>
+</html>
