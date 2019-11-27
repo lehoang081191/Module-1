@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let regexp = '';
+        const isVowelCount = (str) => {
+            regexp = /[aeiou]/i;
+            let count = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (regexp.test(str[i])) {
+                    count++;
+                }
+            }
+            alert("Số nguyên âm trong chuỗi là: " + count);
+        }
+        let str1 = "Le Huu Hoang";
+        isVowelCount(str1);
+    </script>
+    </script>
+</body>
+
+</html>

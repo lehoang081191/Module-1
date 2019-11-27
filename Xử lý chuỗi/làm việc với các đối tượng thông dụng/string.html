@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+        const countWordInChain = () => {
+            let count = 0;
+            let a = "a";
+            for (let i = 1; i < str.length; i++) {
+                if (str.charAt(i) == a)
+                    count++;
+            }
+            if (count == 0)
+                document.write("Không chứa ký tự a");
+            else
+                document.write("Số ký tự 'a' trong chuỗi = " + count);
+        }
+        countWordInChain(str)
+
+    </script>
+</body>
+
+</html>

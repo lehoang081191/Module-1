@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let present = new Date();
+        let birthday = new Date(1991, 11, 8, 10, 0, 0);
+        let yearOld = present.getFullYear() - birthday.getFullYear();
+        function displayYear() {
+            let myYear = present.getFullYear() - birthday.getFullYear();
+            document.write("Tôi đã sống " + myYear + " năm" + "<br>");
+        }
+        function displayMonth() {
+            let myMonth = yearOld * 12;
+            document.write("Tôi đã sống " + myMonth + " tháng" + "<br>");
+        }
+        function displayDay() {
+            let myDay = yearOld * 365;
+            document.write("Tôi đã sống " + myDay + " ngày" + "<br>");
+        }
+        function displayHours() {
+            let myHours = yearOld * (365 * 24);
+            document.write("Tôi đã sống " + myHours + " giờ" + "<br>");
+        }
+        function displayMinutes() {
+            let myMinutes = yearOld * (365 * 24 * 60);
+            document.write("Tôi đã sống " + myMinutes + " phút" + "<br>");
+        }
+        function displaySecond() {
+            let mySecond = yearOld * (365 * 24 * 60 * 60);
+            document.write("Tôi đã sống " + mySecond + " giây" + "<br>");
+        }
+        displayYear();
+        displayMonth();
+        displayDay();
+        displayHours();
+        displayMinutes();
+        displaySecond();
+    </script>
+</body>
+
+</html>

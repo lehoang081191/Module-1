@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const random0den10 = () => {
+            document.write("Số ngẫu nhiên từ 0 đến 10 là: " + Math.floor(Math.random() * 10) + "<br>");
+        }
+
+        const random0den400 = () => {
+            document.write("Số ngẫu nhiên từ 0 đến 400 là: " + Math.floor(Math.random() * 400) + "<br>");
+        }
+
+        const random50den100 = () => {
+            document.write("Số ngẫu nhiên từ 50 đến 100 là: " + Math.floor(Math.random() * (100 - 50) + 50) + "<br>");
+        }
+        random0den10();
+        random0den400();
+        random50den100();
+
+        let arrNum = [5, 7, 2, 9];
+        let min = arrNum[0];
+        const searchMin = () => {
+            for (let i = 0; i < arrNum.length; i++) {
+                if (arrNum[i] < min) {
+                    min = arrNum[i];
+                }
+            }
+            return min;
+        }
+        document.write("Số nhỏ nhất của " + "[" + arrNum + "]" + " là: " + searchMin() + "<br>");
+
+        const dienTichHinhTron = (banKinh) => {
+            let s = banKinh * banKinh * Math.PI;
+            return s;
+        }
+        document.write("Diện tích của hình tròn có bán kính 5cm là: " + dienTichHinhTron(6) + " cm ");
+    </script>
+</body>
+
+</html>

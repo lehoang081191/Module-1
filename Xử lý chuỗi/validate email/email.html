@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let pattern = '';
+        const isCheckMail = (str) => {
+            pattern = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            if (pattern.test(str)) {
+                return `${str} là email hợp lệ`;
+            }
+            return `${str} là email không hợp lệ`;
+        }
+        let mail1 = 'a@gmail.com'
+        let mail2 = 'ab@yahoo.com'
+        let mail3 = 'abc@hotmail.com'
+        let mail4 = '@gmail.com'
+        let mail5 = 'ab@gmail.'
+        let mail6 = '@#abc@gmail.com'
+        document.write(isCheckMail(mail1)+'<br>');
+        document.write(isCheckMail(mail2)+'<br>');
+        document.write(isCheckMail(mail3)+'<br>');
+        document.write(isCheckMail(mail4)+'<br>');
+        document.write(isCheckMail(mail5)+'<br>');
+        document.write(isCheckMail(mail6));
+    </script>
+</body>
+
+</html>

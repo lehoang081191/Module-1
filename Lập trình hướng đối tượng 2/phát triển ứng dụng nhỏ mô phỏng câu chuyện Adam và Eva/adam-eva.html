@@ -12,49 +12,53 @@
     <button onclick="eatApple2()">Eva Eat Apple</button>
     <h2 id="app">Apple</h2>
     <style>
-       body {
-            text-align : center;
-       }
+        body {
+            text-align: center;
+        }
     </style>
-    </head>
+</head>
 ​
 
 <body>
     <script>
-        function Apple(weight) {
-            this.weight = weight;
-            this.getWeight = function () {
+        class Apple {
+            constructor(weight) {
+                this.weight = weight;
+            };
+            getWeight() {
                 return this.weight;
             }
-            this.decreaseApple = function () {
+            decreaseApple() {
                 if (this.weight > 0) {
                     this.weight--;
                 }
             }
-            this.isEmty = function () {
+            isEmty() {
                 if (this.weight == 0) {
                     alert("Đã hết táo!")
                 }
 
             }
         }
-        function Human(name, gender, weight) {
-            this.name = name;
-            this.gender = gender;
-            this.weight = weight;
-            this.getName = function () {
+        class Human {
+            constructor(name, gender, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            };
+            getName() {
                 return this.name;
             }
-            this.getWeights = function () {
+            getWeights() {
                 return this.weight;
             }
-            this.getGender = function () {
+            getGender() {
                 return this.gender
             }
-            this.speak = function () {
+            speak() {
                 alert("Tôi đói !!!")
             }
-            this.eatFoods = function (apple) {
+            eatFoods(apple) {
                 if (apple.weight > 0) {
                     this.weight++
                     apple.decreaseApple();

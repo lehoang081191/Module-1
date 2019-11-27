@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- - Mã bảo mật mạnh thỏa mãn những điều kiện sau đây:-->
+    <!--Có tối thiểu 8 ký tự-->
+    <!--Có ít nhất một kí tự viết thường (a-z)-->
+    <!--Có ít nhất một kí tự viết hoa (A-Z)-->
+    <!--Có ít nhất một chữ số (0-9)-->
+    <!--Có ít nhất một ký tự đặc biệt (!@#\$%\^&)-->
+    <script>
+        let regexp = '';
+        const checkPassWord = (str) => {
+            regexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,}$/;
+            if (regexp.test(str)) {
+                document.write(str + " : Mật khẩu mạnh " + "<br>");
+            } else {
+                document.write(str + " : Mật khẩu yếu, ko an toàn " + "<br>");
+            }
+        }
+        checkPassWord("Abced!23e4");
+        checkPassWord("aBcdưe1@345");
+        checkPassWord("abeCd12$4");
+        checkPassWord("skljfka");
+        checkPassWord("58ekjfr@");
+    </script>
+</body>
+
+</html>
