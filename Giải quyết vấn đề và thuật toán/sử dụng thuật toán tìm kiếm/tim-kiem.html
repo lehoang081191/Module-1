@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm các SĐT thuộc nhà mạng Viettel</title>
+</head>
+
+</body>
+<script>
+    let phoneNumber = ["0935156163", "0917458888", "0379853477", "0935157821", "0902490218", "0913616666", "0353015227", "0902375024", "0339419833", "0352091422", "0916378888", "0342289077"];
+    let viettel= /0(86|96|97|98|32|33|34|35|36|37|38|39)[0-9]{7}/;
+    let viettelNumber = [];
+    for (let i = 0; i < phoneNumber.length; i++) {
+        if (viettel.test(phoneNumber[i])) {
+            viettelNumber.push(phoneNumber[i]);
+        }
+    }
+    document.write("Số điện thoại ban đầu: " + phoneNumber + "<br>");
+    document.write("Số điện thoại Viettel: " + viettelNumber);
+</script>
+</body>
+</html>
