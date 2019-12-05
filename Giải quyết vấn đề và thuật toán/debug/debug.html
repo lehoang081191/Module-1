@@ -1,0 +1,25 @@
+  
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>document</title>
+    </head>
+    <body>
+    <horm name="h">
+        Số đầu tiên:<br/>
+        <input name="a" type="text"/><br/>
+        Số thứ hai: <br/>
+        <input name="b" type="text"/><br/>
+        <div id="resultDiv"></div>
+        <input type="button" value="Tính tích" onclick="products()"/>  //loi thieu s
+    </horm>
+    <script>
+        function products(){
+            var a = parseInt(document.horms['h']['a'].value);
+            var b = parseInt(document.horms['h']['b'].value);  //loi c thay cho b
+            var result = a * b;
+            document.getElementById("resultDiv").innerHTML = "Kết quả: " + result;  //loi dư s ở ids
+        }
+    </script>
+    </body>
+    <html>
